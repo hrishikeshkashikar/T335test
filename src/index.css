@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Servo Controller */
+@layer components {
+  body {
+    @apply bg-gray-100;
+  }
+  
+  input:focus, button:focus {
+    @apply outline-none;
+  }
+  
+  .card {
+    @apply transition-shadow duration-200;
+  }
+  
+  .card:hover {
+    @apply shadow-lg;
+  }
+  .input-field {
+    @apply border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all;
+  }
+  
+  .button-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors;
+  }
+  
+  .button-success {
+    @apply bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors;
+  }
+  
+  .button-danger {
+    @apply bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors;
+  }
+  
+  .button-secondary {
+    @apply bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors;
+  }
+  
+  .status-indicator {
+    @apply h-4 w-4 rounded-full inline-block;
+  }
+  
+  .status-indicator-on {
+    @apply bg-green-500;
+  }
+  
+  .status-indicator-off {
+    @apply bg-red-500;
+  }
+  
+  .command-radio {
+    @apply flex items-center space-x-2 p-2 hover:bg-gray-100 rounded transition-colors;
+  }
+  
+  .feedback-grid {
+    @apply grid grid-cols-3 gap-4 text-sm;
+  }
+  
+  .feedback-label {
+    @apply font-medium text-gray-700;
+  }
+  
+  .feedback-value {
+    @apply text-center font-mono;
+  }
+  
+  .card-container {
+    @apply bg-white rounded-lg shadow-md p-4;
+  }
+  
+  .section-title {
+    @apply text-lg font-bold mb-4;
+  }
+  
+  .message-log {
+    @apply mt-4 p-2 bg-gray-50 rounded min-h-[100px] font-mono text-sm;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Input focus styles */
+input:focus, button:focus {
+  @apply outline-none ring-2 ring-blue-500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feedback-grid {
+    @apply grid-cols-2;
+  }
+  
+  .input-field {
+    @apply text-sm;
+  }
+  
+  .button-primary, 
+  .button-success, 
+  .button-danger, 
+  .button-secondary {
+    @apply px-3 py-1.5 text-sm;
+  }
+}
+
+/* Animation for status indicators */
+.status-indicator {
+  transition: background-color 0.3s ease;
+}
+
+/* Disabled state styles */
+.disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Card header styles */
+.card-header {
+  @apply border-b pb-2 mb-4;
+}
+
+/* Message log styles */
+.message-from {
+  @apply text-blue-600;
+}
+
+.message-to {
+  @apply text-green-600;
+}
